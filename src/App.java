@@ -76,12 +76,31 @@ public class App {
                         break;
 
                 case 6: 
-                        
-                            
-                        
-                    
+                    System.out.println("Informe o código do paciente");
+                    codigo = in.nextInt();
+                    System.out.println("Informe o peso do paciente no intervalo (0,150kg]");
+                    peso=in.nextDouble();
+                    if(lista.alteraPeso(codigo, peso)){
+                        System.out.println("Peso do paciente alterado");
+                    }
+                    else{
+                        System.out.println("Código não cadastrado ou peso fora do intervalo (0,150kg]");
+                        System.out.println("Não foi possível alterar o peso do paciente");
+                    }
                     break;
+                    
                 case 7:
+                    System.out.println("Informe o código do paciente");
+                    codigo = in.nextInt();
+                    System.out.println("Informe a altura do paciente no intervalo (0,2.5m]");
+                    altura=in.nextDouble();
+                    if(lista.alteraPeso(codigo, altura)){
+                        System.out.println("Altura do paciente alterado");
+                    }
+                    else{
+                        System.out.println("Código não cadastrado ou altura fora do intervalo (0,2.5m]");
+                        System.out.println("Não foi possível alterar a altura do paciente");
+                    }
                     
                     break;
                 case 8:
@@ -95,10 +114,11 @@ public class App {
                     break;
                 
                 case 11:
-                    
+                    System.out.println("Saindo da Lista de Pacientes");
                     break;
 
-                    default:
+                default:
+                    System.out.println("Opção inválida");
                     break;
             }
 
