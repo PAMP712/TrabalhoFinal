@@ -104,16 +104,55 @@ public class App {
                     
                     break;
                 case 8:
-                    
+                    System.out.println("Informe o código do paciente");
+                    codigo = in.nextInt();
+                    System.out.println("Informe o gênero do paciente digite F (feminino) ou  M (masculino)");
+                    genero=in.nextLine();
+                    if(lista.alteraGenero(codigo, genero)){
+                        System.out.println("Gênero do paciente alterado");
+                    }
+                    else{
+                        System.out.println("Código não cadastrado ou gênero diferente de (F ou M)");
+                        System.out.println("Não foi possível alterar o gênero do paciente");
+                    }
                     break;
                 case 9:
+                    System.out.println("Informe o código do paciente");
+                    codigo = in.nextInt();
+                    System.out.println("Informe a idade do paciente no intervalo (0,120]");
+                    idade=in.nextInt();
+                    if(lista.alteraPeso(codigo, idade)){
+                        System.out.println("Idade do paciente alterado");
+                    }
+                    else{
+                        System.out.println("Código não cadastrado ou idade fora do intervalo (0,120]");
+                        System.out.println("Não foi possível alterar a idade do paciente");
+                    }
                     
                     break;
                 case 10:
-                    
+                    System.out.println("Digite o código do paciente para saber o seu IMC: ");
+                    codigo = in.nextInt(); 
+                    if (lista.buscaPacientePorCodigo(codigo)!=null){
+                        System.out.println("O IMC do paciente é: " +lista.buscaPacientePorCodigo(codigo).calculaIMC());
+                    }
+                    else{
+                        System.out.println("Código de paciente não encontrado ou não cadastrado");
+                    }
                     break;
                 
                 case 11:
+                    System.out.println("Digite o código do paciente para saber o seu IMC: ");
+                    codigo = in.nextInt(); 
+                    if (lista.buscaPacientePorCodigo(codigo)!=null){
+                        System.out.println("O Peso ideal do paciente é: " + lista.buscaPacientePorCodigo(codigo).calculaPesoIdeal());
+                    }
+                    else{
+                        System.out.println("Código de paciente não encontrado ou não cadastrado");
+                    }
+                    break;
+
+                case 12:
                     System.out.println("Saindo da Lista de Pacientes");
                     break;
 
@@ -122,7 +161,7 @@ public class App {
                     break;
             }
 
-        }while(opçao!=11);
+        }while(opçao!=12);
 
 
 
@@ -135,12 +174,13 @@ public class App {
         System.out.println("3. Listar Pacientes com Idade Acima de...");
         System.out.println("4. Listar Todos os Pacientes");
         System.out.println("5. Cadastrar Paciente");
-        System.out.println("6. Alterar Peso de Paciente");
-        System.out.println("7. Alterar Altura de Paciente");
-        System.out.println("8. Alterar Gênero de Paciente");
-        System.out.println("9. Alterar Idade de Paciente");
-        System.out.println("10. Mostrar IMC de Paciente");
-        System.out.println("11. Sair");
+        System.out.println("6. Alterar Peso do Paciente");
+        System.out.println("7. Alterar Altura do Paciente");
+        System.out.println("8. Alterar Gênero do Paciente");
+        System.out.println("9. Alterar Idade do Paciente");
+        System.out.println("10. Mostrar o IMC do Paciente");
+        System.out.println("11. Mostrar o Peso Ideal do Paciente");
+        System.out.println("12. Sair");
         System.out.print("Escolha uma opção: ");
     }
 
