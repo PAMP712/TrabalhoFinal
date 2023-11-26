@@ -1,12 +1,12 @@
 public class Paciente {
     private int codigo;
     private String nome;
-    private char genero;
+    private String genero;
     private double peso;
     private double altura;
     private int idade;
     
-    public Paciente(String nome, char genero){
+    public Paciente(String nome, String genero){
         this.nome = nome;
         this.genero = genero;
         peso = 0;
@@ -31,38 +31,72 @@ public class Paciente {
         this.nome = nome;
     }
 
-    public char getGenero() {
+    public String getGenero() {
         return this.genero;
     }
 
-    public void setGenero(char genero) {
-        this.genero = genero;
+    public void setGenero(String genero) {
+            this.genero = genero.toUpperCase();
     }
 
     public double getPeso() {
         return this.peso;
     }
 
-    public void setPeso(int peso) {
-        this.peso = peso;
+    public boolean setPeso(double peso) {
+        if(peso>0 || peso<= 150){
+            this.peso = peso;
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 
     public double getAltura() {
         return this.altura;
     }
 
-    public void setAltura(double altura) {
-        this.altura = altura;
+    public boolean setAltura(double altura) {
+        if(altura>0 || altura<= 2.5){
+            this.altura = altura;
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 
     public int getIdade() {
         return this.idade;
     }
 
-    public void setIdade(int idade) {
-        this.idade = idade;
+    public boolean setIdade(int idade) {
+        if(idade>=0 || idade<= 120){
+            this.idade = idade;
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+    public double calculaPesoIdeal(){
+        if(genero.equalsIgnoreCase("M")){
+            return ((72.2*altura)-58);
+        }
+        else{
+            return ((62.1*altura)-44.7);
+        }
     }
     
+    public double calculaIMC(){
+        return (peso/(Math.pow(altura, 2)));
+    }
+    
+    public String toString() {
+        return "/n codigo:" + getCodigo()+ "/n nome:" + getNome()+ "/n genero:" + getGenero()+ "/n peso:" + getPeso()+ "/n altura:" + getAltura()+ "/n idade:" + getIdade();
+    }
     
 
     
