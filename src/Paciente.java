@@ -58,7 +58,7 @@ public class Paciente {
     }
 
     public boolean setAltura(double altura) {
-        if(altura>0 || altura<= 2.5){
+        if(altura>0 && altura<= 2.5){
             this.altura = altura;
             return true;
         }
