@@ -58,10 +58,10 @@ public class App {
                         
                     break;
                 case 5: 
-                    do{
+                    
                         System.out.println("Informe o nome do paciente");
                         nome = in.nextLine();
-                    }while (nome !=null);
+                        in.nextLine();
                 
                     do{
                         System.out.println("Informe o gênero do paciente digite F (feminino) ou  M (masculino)");
