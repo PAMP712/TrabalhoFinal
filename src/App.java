@@ -59,16 +59,19 @@ public class App {
                     break;
                 case 5: 
                     
-                        System.out.println("Informe o nome do paciente");
-                        nome = in.nextLine();
-                        in.nextLine();
+                    System.out.println("Informe o nome do paciente");
+                    nome = in.nextLine();
+                    in.nextLine();
+                    System.out.println("Informe o código do paciente");
+                    codigo = in.nextInt();
+                    in.nextLine();
                 
                     do{
                         System.out.println("Informe o gênero do paciente digite F (feminino) ou  M (masculino)");
                         genero = in.nextLine();
                     }while (confereGenero(genero));
 
-                    Paciente p = new Paciente(nome, genero);
+                    Paciente p = new Paciente(nome, genero, codigo);
                     if (lista.cadastraPaciente(p))
                             System.out.println("Paciente cadastrado");
                     else

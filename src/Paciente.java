@@ -6,11 +6,11 @@ public class Paciente {
     private double altura;
     private int idade;
     
-    public Paciente(String nome, String genero){
+    public Paciente(String nome, String genero, int codigo){
         this.nome = nome;
         this.genero = genero;
         peso = 0;
-        codigo=0;
+        this.codigo =codigo;
         altura=0;
         idade=0;
 
