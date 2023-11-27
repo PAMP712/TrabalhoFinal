@@ -72,7 +72,7 @@ public class Paciente {
     }
 
     public boolean setIdade(int idade) {
-        if(idade>=0 || idade<= 120){
+        if(idade>=0 && idade<= 120){
             this.idade = idade;
             return true;
         }
