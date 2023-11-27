@@ -44,7 +44,7 @@ public class Paciente {
     }
 
     public boolean setPeso(double peso) {
-        if(peso>0 || peso<= 150){
+        if(peso>0 && peso<= 150){
             this.peso = peso;
             return true;
         }
